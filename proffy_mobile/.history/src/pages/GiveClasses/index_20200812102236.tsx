@@ -1,0 +1,2 @@
+import Rract from 'react';
+
