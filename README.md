@@ -19,9 +19,9 @@ No aplicativo, os alunos podem consultar e verificar a hora em que os professore
 ## Instalação
 
 Para fazer a instalação das aplicações é preciso ter:
-    - React
-    - React Native 
-    - e Node já instalados em sua máquina.
+- React
+- React Native 
+- e Node já instalados em sua máquina.
 
 Em seguida, entre em cada pasta através do terminal ou Prompt de comando e execute
 yarn install
