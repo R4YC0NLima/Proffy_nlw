@@ -1,8 +1,8 @@
 # Proffy - NLW #2
 
-##O Proffy é um sisteminha básico em homenagem ao dia do profissional de educação.
+O Proffy é um sisteminha básico em homenagem ao dia do profissional de educação.
 
-O objetivo desse projeto é manter o contato entre professores e alunos.
+O projeto tem como objetivo manter o contato entre professores e alunos.
 
 Ele contém:
 - Uma aplicação web
