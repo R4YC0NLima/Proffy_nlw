@@ -19,11 +19,11 @@ export default class ClassesController {
         const time      = filters.time as string;
 
         if(!filters.week_day || !filters.subject || !filters.time) {
-            
+
             return response.status(400).json({
-                error: 'Mising filters to search classes'
+                error: 'Missing filters to search classes'
             });
-            
+
         }
 
         const timeInMinutes = convertHourToMinutes(time);
@@ -43,7 +43,7 @@ export default class ClassesController {
 
 
         return response.json(classes);
-        
+
     }
 
     async create(request: Request, response: Response) {
@@ -77,7 +77,7 @@ export default class ClassesController {
             })
 
             const class_id = insertedClassesIds[0];
-            
+
             const classSchedule = schedule.map((scheduleItem: ScheduleItem) => {
                 return {
                     class_id,
@@ -92,7 +92,7 @@ export default class ClassesController {
             await trx.commit();
 
             return response.status(201).send();
-        
+
         } catch (err) {
             await trx.rollback();
 
@@ -100,6 +100,6 @@ export default class ClassesController {
                 error: 'Unexpected error while creating new class'
             })
         }
-    
+
     }
 }
