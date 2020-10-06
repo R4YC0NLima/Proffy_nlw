@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import {View, ScrollView, Text, TextInput} from 'react-native';
 import {BorderlessButton, RectButton} from 'react-native-gesture-handler';
 import AsyncStorage from '@react-native-community/async-storage';
-import {Picker} from '@react-native-community/picker';
 import { useFocusEffect } from '@react-navigation/native';
 
 import Feather from 'react-native-vector-icons/Ionicons';
@@ -12,6 +11,10 @@ import api from '../../services/api';
 import styles from './styles';
 
 function TeacherList() {
+
+  state = {
+    semana: 'java',
+  };
 
   const [teachers, setTeachers] = useState([]);
   const [favorites, setFavorites] = useState<Number[]>([]);
@@ -52,7 +55,7 @@ function TeacherList() {
 
     setIsFiltersVisible(false)
     setTeachers(response.data)
-
+    
   }
 
   return (
@@ -112,7 +115,7 @@ function TeacherList() {
               <TeacherItem key={teacher.id} teacher={teacher} favorited={favorites.includes(teacher.id)}/>
             )
           })}
-
+       
       </ScrollView>
     </View>
   );
