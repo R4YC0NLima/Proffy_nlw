@@ -13,6 +13,10 @@ import styles from './styles';
 
 function TeacherList() {
 
+  state = {
+    semana: 'java',
+  };
+
   const [teachers, setTeachers] = useState([]);
   const [favorites, setFavorites] = useState<Number[]>([]);
   const [isFiltersVisible, setIsFiltersVisible] = useState(false);
@@ -52,7 +56,7 @@ function TeacherList() {
 
     setIsFiltersVisible(false)
     setTeachers(response.data)
-
+    
   }
 
   return (
@@ -112,7 +116,7 @@ function TeacherList() {
               <TeacherItem key={teacher.id} teacher={teacher} favorited={favorites.includes(teacher.id)}/>
             )
           })}
-
+       
       </ScrollView>
     </View>
   );

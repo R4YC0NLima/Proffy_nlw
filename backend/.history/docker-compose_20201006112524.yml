@@ -1,0 +1,47 @@
+version: "3"
+services: 
+    node:
+        build: .
+        container_name: app_bemol
+        ports: 
+            - 3000:3000
+        volumes: 
+            - ./:/usr/src/app
+        depends_on: 
+            - mysql
+            - phpmyadmin
+        networks: 
+            - trafego
+        
+    mysql:
+        image: mysql:5.7
+        container_name: mysql_bemol
+        ports: 
+            - 3306:3006
+        volumes: 
+            - db-data:/var/lib/mysql
+        environment: 
+            MYSQL_ROOT_PASSWORD: someRandomPassword
+            MYSQL_DATABASE: nlw_proffy
+            MYSQL_USER: root
+            MYSQL_PASSWORD: someRandomPassword
+        networks: 
+            - trafego
+
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin:latest
+        container_name: phpmyadmin_bemol
+        links:
+            - mysql
+        ports:
+            - 80:80
+        environment:
+            - PMA_ARBITRARY=1
+        networks:
+            - trafego
+
+volumes:
+    db-data: {} 
+
+networks: 
+    trafego:
