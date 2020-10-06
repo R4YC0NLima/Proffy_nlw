@@ -52,7 +52,7 @@ function TeacherList() {
 
     setIsFiltersVisible(false)
     setTeachers(response.data)
-
+    
   }
 
   return (
@@ -112,7 +112,7 @@ function TeacherList() {
               <TeacherItem key={teacher.id} teacher={teacher} favorited={favorites.includes(teacher.id)}/>
             )
           })}
-
+       
       </ScrollView>
     </View>
   );

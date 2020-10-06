@@ -52,7 +52,7 @@ function TeacherList() {
 
     setIsFiltersVisible(false)
     setTeachers(response.data)
-
+    
   }
 
   return (
@@ -78,13 +78,13 @@ function TeacherList() {
             <View style={styles.inputGroup}>
               <View style={styles.inputBlock}>
                 <Text style={styles.label}>Dia da Semana</Text>
-                <TextInput
+                {/* <TextInput
                   style={styles.input}
                   value={week_day}
                   onChangeText={text => setWeekDay(text)}
                   placeholder="Qual o dia?"
                   placeholderTextColor="#c1bccc"
-                />
+                /> */}
               </View>
               <View style={styles.inputBlock}>
                 <Text style={styles.label}>Horário</Text>
@@ -112,7 +112,7 @@ function TeacherList() {
               <TeacherItem key={teacher.id} teacher={teacher} favorited={favorites.includes(teacher.id)}/>
             )
           })}
-
+       
       </ScrollView>
     </View>
   );

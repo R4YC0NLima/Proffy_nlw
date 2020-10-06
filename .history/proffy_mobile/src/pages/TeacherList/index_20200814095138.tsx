@@ -13,6 +13,10 @@ import styles from './styles';
 
 function TeacherList() {
 
+  state = {
+    semana: 'java',
+  };
+
   const [teachers, setTeachers] = useState([]);
   const [favorites, setFavorites] = useState<Number[]>([]);
   const [isFiltersVisible, setIsFiltersVisible] = useState(false);
@@ -52,7 +56,7 @@ function TeacherList() {
 
     setIsFiltersVisible(false)
     setTeachers(response.data)
-
+    
   }
 
   return (
@@ -76,7 +80,7 @@ function TeacherList() {
             />
 
             <View style={styles.inputGroup}>
-              <View style={styles.inputBlock}>
+              {/* <View style={styles.inputBlock}>
                 <Text style={styles.label}>Dia da Semana</Text>
                 <TextInput
                   style={styles.input}
@@ -85,7 +89,7 @@ function TeacherList() {
                   placeholder="Qual o dia?"
                   placeholderTextColor="#c1bccc"
                 />
-              </View>
+              </View> */}
               <View style={styles.inputBlock}>
                 <Text style={styles.label}>Horário</Text>
                 <TextInput
@@ -112,7 +116,7 @@ function TeacherList() {
               <TeacherItem key={teacher.id} teacher={teacher} favorited={favorites.includes(teacher.id)}/>
             )
           })}
-
+       
       </ScrollView>
     </View>
   );
