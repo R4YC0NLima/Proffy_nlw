@@ -3,10 +3,10 @@ import knex from 'knex';
 const db = knex({
     client: 'mysql',
     connection: {
-        user : 'root',
+        user: 'root',
         host: 'mysql_proffy',
-        password : 'someRandomPassword',
-        database : 'nlw_proffy'
+        password: 'someRandomPassword',
+        database: 'nlw_proffy'
     }
 })
 
