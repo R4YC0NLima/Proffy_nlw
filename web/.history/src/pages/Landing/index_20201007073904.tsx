@@ -22,7 +22,8 @@ function Landing() {
         })
     }, []); 
 
-    
+    log
+
     return (
         <div id="page-landing">
             <div id="page-landing-content" className="container">

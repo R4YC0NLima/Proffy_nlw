@@ -21,7 +21,6 @@ function Landing() {
             
         })
     }, []); 
-
     
     return (
         <div id="page-landing">

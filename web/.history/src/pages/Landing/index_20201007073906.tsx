@@ -22,7 +22,10 @@ function Landing() {
         })
     }, []); 
 
-    
+    console.log('====================================');
+    console.log();
+    console.log('====================================');
+
     return (
         <div id="page-landing">
             <div id="page-landing-content" className="container">
