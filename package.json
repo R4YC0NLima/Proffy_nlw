@@ -13,6 +13,7 @@
     "express": "^4.17.1",
     "knex": "^0.21.3",
     "mysql": "^2.18.1",
+    "openssl-nodejs": "^1.0.5",
     "typescript": "^3.9.7"
   },
   "devDependencies": {
