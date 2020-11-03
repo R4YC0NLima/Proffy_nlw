@@ -2,16 +2,11 @@ import express from 'express';
 import ClassesController from './controllers/ClassesController';
 import ConnectionsController from './controllers/ConnectionsController';
 
-
 const routes = express.Router();
 const classesControllers = new ClassesController();
 const connectionsControllers = new ConnectionsController();
 
-routes.get('/teste', (request, response) => {
-    console.log('Acessou a rota');
-})
-
-routes.get('/list-classes', classesControllers.index)
+routes.get('/classes', classesControllers.index)
 routes.post('/classes', classesControllers.create)
 
 routes.get('/connections', connectionsControllers.index)
